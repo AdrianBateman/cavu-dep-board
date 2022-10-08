@@ -15,30 +15,30 @@ describe('TitleComponent', () => {
       propsData: {
         title
       }
-    });
+    })
 
-    const h1Tag = wrapper.find('h1');
+    const h1Tag = wrapper.find('h1')
 
     expect(h1Tag.text())
-      .toMatch(title);
+      .toMatch(title)
   })
 
   it('will not render when missing required title prop', () => {
-      const wrapper = shallowMount(TitleComponent);
+    const wrapper = shallowMount(TitleComponent)
 
-      expect(wrapper)
-          .toMatchSnapshot();
-  });
+    expect(wrapper)
+      .toMatchSnapshot()
+  })
 
   it('renders with supplied icon and title props', () => {
-      const wrapper = shallowMount(TitleComponent, {
-          propsData: {
-              title,
-              icon,
-          },
-      });
+    const wrapper = shallowMount(TitleComponent, {
+      propsData: {
+        title,
+        icon
+      }
+    })
 
-      expect(wrapper)
-        .toMatchSnapshot();
-  });
+    expect(wrapper)
+      .toMatchSnapshot()
+  })
 })
