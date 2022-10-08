@@ -1,6 +1,6 @@
 # cavu-dep-board
 
-## Project setup
+## Setup
 ```
 npm install
 ```
@@ -20,10 +20,63 @@ npm run build
 npm run test:unit
 ```
 
+### Run unit tests with coverage
+```
+npm run test:coverage
+```
+
 ### Lints and fixes files
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Extra Packages
+
+### Dependencies
+
+`core-js` - polyfill JS library library
+
+### Dev Dependencies
+
+#### Unit testing
+
+`babel-jest`
+
+`@vue/cli-plugin-unit-jest`
+
+`@vue/test-utils`
+
+`@vue/vue2-jest`
+
+`jest`
+
+#### Compiling source code
+`@babel/core`
+
+`@babel/eslint-parser`
+
+` @vue/cli-plugin-babel`
+
+`sass`
+
+`sass-loader`
+
+`vue-template-compiler`
+
+#### File linting code consistency
+`@vue/cli-plugin-eslint`
+
+`@vue/eslint-config-standard`
+
+`eslint`
+
+`eslint-plugin-import`
+
+`eslint-plugin-node`
+
+`eslint-plugin-promise`
+
+`eslint-plugin-vue`
+
+#### Command line tools
+`@vue/cli-service`

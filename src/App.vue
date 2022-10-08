@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app"
+       class="main-app">
+    <TitleComponent title="Departures"
+                    :icon="titleComponentIcon" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TitleComponent from './components/TitleComponent/TitleComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TitleComponent
+  },
+  data () {
+    return {
+      titleComponentIcon: {
+        src: 'https://via.placeholder.com/48x48',
+        width: 48,
+        height: 48,
+        alt: 'Departure board icon'
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.main-app {
+  max-width: 1300px;
 }
 </style>

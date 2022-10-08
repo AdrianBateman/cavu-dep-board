@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleComponent renders with supplied icon and title props 1`] = `
+<header class="title-component"><img src="https://via.placeholder.com/40x40" width="40" height="40" alt="test image" class="title-component__icon">
+  <h1 class="title-component__text">Foo bar</h1>
+</header>
+`;
+
+exports[`TitleComponent will not render when missing required title prop 1`] = ``;
