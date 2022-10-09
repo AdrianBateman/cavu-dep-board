@@ -37,7 +37,9 @@ npm run lint
 * Limit displayed items to 10/20/next hour/all
 * Add option to sort using sortFlightData function
 * Add form style
-* Add error message to view
+
+## NOTE
+Flag in file `src\functions\fetch-flight-data\fetch-flight-data.js` line 4 for testing error message
 
 ## Extra Packages
 

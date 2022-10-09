@@ -65,6 +65,10 @@ export default {
     async getFlightData () {
       const data = await fetchFlightData()
 
+      if (!data.allDepartures) {
+        return
+      }
+
       this.flights = data.allDepartures.map(
         ({ flightNumber }) => flightNumber)
     },
@@ -80,5 +84,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+/**
+  TODO: ran out of time
+*/
 </style>

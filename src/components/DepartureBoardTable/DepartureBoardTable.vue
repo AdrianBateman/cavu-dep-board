@@ -1,6 +1,7 @@
 <template>
   <div class="departure-board">
-    <table class="departure-board__table">
+    <table v-if="!hasError"
+    class="departure-board__table">
       <tr class="departure-board__header departure-board-header">
         <th v-for="title in tableHeader"
             :key="title"
@@ -19,6 +20,11 @@
         </td>
       </tr>
     </table>
+    <div v-else
+      class="departure-board__error"
+    >
+      <h2>{{ errorMessage }}</h2>
+    </div>
   </div>
 </template>
 
@@ -77,12 +83,22 @@ export default {
           status: ''
         }
       ],
-      isLoading: true
+      isLoading: true,
+      hasError: false,
+      errorMessage: undefined
     }
   },
   methods: {
     async getFlightData () {
+      // TODO: extract to store
       const data = await fetchFlightData()
+
+      if (!data.allDepartures) {
+        this.hasError = true
+        this.isLoading = false
+        this.errorMessage = data.message
+        return
+      }
 
       this.flightData = data.allDepartures.map(
         ({
@@ -188,6 +204,13 @@ $desktopWidth: 600px;
         box-sizing: border-box;
       }
     }
+  }
+
+  &__error {
+    background-color: #fff;
+    padding: 2rem;
+    border: 2px solid red;
+    border-radius: 10px;
   }
 }
 
