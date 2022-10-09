@@ -3,16 +3,19 @@
        class="main-app">
     <TitleComponent title="Departures"
                     :icon="titleComponentIcon" />
+    <DepartureBoardTable :table-header="tableHeader" />
   </div>
 </template>
 
 <script>
 import TitleComponent from './components/TitleComponent/TitleComponent.vue'
+import DepartureBoardTable from './components/DepartureBoardTable/DepartureBoardTable.vue'
 
 export default {
   name: 'App',
   components: {
-    TitleComponent
+    TitleComponent,
+    DepartureBoardTable
   },
   data () {
     return {
@@ -21,7 +24,15 @@ export default {
         width: 48,
         height: 48,
         alt: 'Departure board icon'
-      }
+      },
+      tableHeader: [
+        'Departure time',
+        'City Name',
+        'Code',
+        'Airline',
+        'Gate',
+        'Status'
+      ]
     }
   }
 }
@@ -31,9 +42,12 @@ export default {
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .main-app {
   max-width: 1300px;
+  margin: 0 auto;
 }
 </style>
