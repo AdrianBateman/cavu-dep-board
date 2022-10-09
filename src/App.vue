@@ -4,18 +4,21 @@
     <TitleComponent title="Departures"
                     :icon="titleComponentIcon" />
     <DepartureBoardTable :table-header="tableHeader" />
+    <UpdateFlightForm />
   </div>
 </template>
 
 <script>
 import TitleComponent from './components/TitleComponent/TitleComponent.vue'
 import DepartureBoardTable from './components/DepartureBoardTable/DepartureBoardTable.vue'
+import UpdateFlightForm from './components/UpdateFlightForm/UpdateFlightForm.vue'
 
 export default {
   name: 'App',
   components: {
     TitleComponent,
-    DepartureBoardTable
+    DepartureBoardTable,
+    UpdateFlightForm
   },
   data () {
     return {
@@ -44,6 +47,7 @@ body {
   font-size: 14px;
   margin: 0;
   box-sizing: border-box;
+  padding-bottom: 10rem;
 }
 
 .main-app {

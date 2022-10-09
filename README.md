@@ -7,7 +7,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
 
 ### Compiles and minifies for production
@@ -29,6 +29,15 @@ npm run test:coverage
 ```
 npm run lint
 ```
+
+## TODO
+
+* Add store to keep response from fetchFlightData
+* Use store to display flight data
+* Limit displayed items to 10/20/next hour/all
+* Add option to sort using sortFlightData function
+* Add form style
+* Add error message to view
 
 ## Extra Packages
 
