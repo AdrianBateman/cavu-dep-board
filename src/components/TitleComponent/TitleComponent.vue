@@ -32,6 +32,7 @@ $desktopWidth: 500px;
 .title-component {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   padding: 32px 0 30px 45px;
   background: radial-gradient(hsl(52, 79%, 62%) 0%, hsl(51, 73%, 53%) 100%);
 
