@@ -6,26 +6,16 @@
             :key="title"
             class="departure-board-header__item">{{ title }}</th>
       </tr>
-      <tr v-for="departure in flightData"
-          :key="departure.flightNumber"
-          class="departure-board__row departure-board-row">
-        <td class="departure-board-row__item">
-          {{ departure.scheduledDepartureDateTime }}
-        </td>
-        <td class="departure-board-row__item">
-          {{ departure.cityName }}
-        </td>
-        <td class="departure-board-row__item">
-          {{ departure.code }}
-        </td>
-        <td class="departure-board-row__item">
-          {{ departure.name }}
-        </td>
-        <td class="departure-board-row__item">
-          {{ departure.departureGateNumber }}
-        </td>
-        <td class="departure-board-row__item">
-          {{ departure.status }}
+      <tr v-for="(departure, key) in flightData"
+          :key="JSON.stringify(departure) + key"
+          class="departure-board__row departure-board-row"
+          :class="{'departure-board__row--loading': isLoading}"
+      >
+          <td class="departure-board-row__item"
+            v-for="(item, key) in departure"
+            :key="item + key"
+          >
+          {{ item }}
         </td>
       </tr>
     </table>
@@ -45,7 +35,49 @@ export default {
   },
   data () {
     return {
-      flightData: undefined
+      flightData: [
+        {
+          scheduledDepartureDateTime: ' ',
+          cityName: ' ',
+          code: ' ',
+          name: ' ',
+          departureGateNumber: ' ',
+          status: ' '
+        },
+        {
+          scheduledDepartureDateTime: '',
+          cityName: '',
+          code: '',
+          name: '',
+          departureGateNumber: '',
+          status: ''
+        },
+        {
+          scheduledDepartureDateTime: '',
+          cityName: '',
+          code: '',
+          name: '',
+          departureGateNumber: '',
+          status: ''
+        },
+        {
+          scheduledDepartureDateTime: '',
+          cityName: '',
+          code: '',
+          name: '',
+          departureGateNumber: '',
+          status: ''
+        },
+        {
+          scheduledDepartureDateTime: '',
+          cityName: '',
+          code: '',
+          name: '',
+          departureGateNumber: '',
+          status: ''
+        }
+      ],
+      isLoading: true
     }
   },
   methods: {
@@ -54,7 +86,6 @@ export default {
 
       this.flightData = data.allDepartures.map(
         ({
-          flightNumber,
           scheduledDepartureDateTime,
           status,
           departureGate,
@@ -70,14 +101,15 @@ export default {
             ? '0' + dateDeparture.getMinutes()
             : dateDeparture.getMinutes()
 
+          this.isLoading = false
+
           return {
-            flightNumber,
             scheduledDepartureDateTime: `${departureHours}.${departureMinutes}`,
-            status,
-            departureGateNumber: departureGate?.number || 'Pending',
-            name: airline.name,
+            cityName: arrivalAirport.cityName,
             code: arrivalAirport.code,
-            cityName: arrivalAirport.cityName
+            name: airline.name,
+            departureGateNumber: departureGate?.number || 'Pending',
+            status
           }
         }
       )
@@ -137,6 +169,25 @@ $desktopWidth: 600px;
       border-radius: 10px;
       z-index: 0;
     }
+
+    &--loading {
+      height: 76px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        border-color: hsla(0, 0%, 100%, .3) transparent transparent transparent;
+        animation: loading-circle 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        box-sizing: border-box;
+      }
+    }
   }
 }
 
@@ -182,6 +233,15 @@ $desktopWidth: 600px;
     &:nth-of-type(5) {
       color: #F5D836;
     }
+  }
+}
+
+@keyframes loading-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

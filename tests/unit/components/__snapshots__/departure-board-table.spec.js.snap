@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DepartureBoardTable renders with response from fetch 1`] = `
+<div class="departure-board">
+  <table class="departure-board__table">
+    <tr class="departure-board__header departure-board-header">
+      <th class="departure-board-header__item">Departure time</th>
+      <th class="departure-board-header__item">City Name</th>
+      <th class="departure-board-header__item">Code</th>
+      <th class="departure-board-header__item">Airline</th>
+      <th class="departure-board-header__item">Gate</th>
+      <th class="departure-board-header__item">Status</th>
+    </tr>
+    <tr class="departure-board__row departure-board-row">
+      <td class="departure-board-row__item">
+        10.30
+      </td>
+      <td class="departure-board-row__item">
+        Paris
+      </td>
+      <td class="departure-board-row__item">
+        CDG
+      </td>
+      <td class="departure-board-row__item">
+        Air France
+      </td>
+      <td class="departure-board-row__item">
+        A5
+      </td>
+      <td class="departure-board-row__item">
+        Departed 10:49
+      </td>
+    </tr>
+    <tr class="departure-board__row departure-board-row">
+      <td class="departure-board-row__item">
+        10.40
+      </td>
+      <td class="departure-board-row__item">
+        Istanbul
+      </td>
+      <td class="departure-board-row__item">
+        IST
+      </td>
+      <td class="departure-board-row__item">
+        Turkish Airlines
+      </td>
+      <td class="departure-board-row__item">
+        31
+      </td>
+      <td class="departure-board-row__item">
+        Final Call - Gate 31
+      </td>
+    </tr>
+  </table>
+</div>
+`;
+
+exports[`DepartureBoardTable renders with supplied tableHeader 1`] = `
+<div class="departure-board">
+  <table class="departure-board__table">
+    <tr class="departure-board__header departure-board-header">
+      <th class="departure-board-header__item">Departure time</th>
+      <th class="departure-board-header__item">City Name</th>
+      <th class="departure-board-header__item">Code</th>
+      <th class="departure-board-header__item">Airline</th>
+      <th class="departure-board-header__item">Gate</th>
+      <th class="departure-board-header__item">Status</th>
+    </tr>
+    <tr class="departure-board__row departure-board-row departure-board__row--loading">
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+    </tr>
+    <tr class="departure-board__row departure-board-row departure-board__row--loading">
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+    </tr>
+    <tr class="departure-board__row departure-board-row departure-board__row--loading">
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+    </tr>
+    <tr class="departure-board__row departure-board-row departure-board__row--loading">
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+    </tr>
+    <tr class="departure-board__row departure-board-row departure-board__row--loading">
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+      <td class="departure-board-row__item">
+
+      </td>
+    </tr>
+  </table>
+</div>
+`;
